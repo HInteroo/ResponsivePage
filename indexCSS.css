@@ -1,0 +1,70 @@
+body{
+  background: #2b2a2a;
+  height: 100%;
+  width: 100%;
+}
+/* @media only screen and (max-width: 1600px){ */
+/* -------------------------------------------- Banner Content's CSS / Create Sides ---------------------------------- */
+
+.bannerContent{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: white;
+  height: 520px;
+  width: 100%;
+  max-width: 1600px;
+  max-height: 520px;
+}
+.LeftSide,.RightSide{
+  position: relative;
+  height: 100%;
+}
+/* -------------------------------------------- Left side of the banner / Carousel & arrows---------------------- */
+.LeftSide{
+  float: left;
+  width: 44%;
+}
+#leftButton,#rightButton{
+  position: absolute;
+  height: auto;
+  width: 16%;
+}
+#leftButton{
+  bottom: 14%;
+}
+#rightButton{
+  margin-right: 10px;
+  right: 0;
+  bottom: 14%;
+}
+
+/* -------------------------------------------- Video / Right Side of the banner -----------------------------------*/
+
+.RightSide{
+  float: right;
+  width: 56%;
+}
+.RightSide #BarclaysVid{
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  top: 50%;
+  right: 0;
+  margin: -260px 5px 0 5px;
+}
+/* --------------------------------------------First Slide / Left Side-------------------------------------------------- */
+.firstSlide{
+  /* background: red; */
+  height: 100%;
+  width: 100%;
+}
+.LeftSide #slide1Img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -200px 0 0 -40%;
+  width: 60%;
+  height: auto;
+}
+/* } */
