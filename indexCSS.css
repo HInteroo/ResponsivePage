@@ -5,44 +5,34 @@ body{
 }
 /* @media only screen and (max-width: 1600px){ */
 /* -------------------------------------------- Banner Content's CSS / Create Sides ---------------------------------- */
-
 .bannerContent{
   position: absolute;
   left: 0;
   top: 0;
   background-color: white;
-  height: 520px;
-  width: 100%;
-  max-width: 1600px;
-  max-height: 520px;
+  transition: all 0.5s;
+}
+@media only screen and (min-width: 768px) {
+
+  .bannerContent{
+    height: 520px;
+    width: 100%;
+    max-width: 1600px;
+    max-height: 520px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .bannerContent{
+    height: 520px;
+    width: 100%;
+    max-width: 1600px;
+    max-height: 430px;
+  }
 }
 .LeftSide,.RightSide{
   position: relative;
   height: 100%;
 }
-/* -------------------------------------------- Left side of the banner / Carousel & arrows---------------------- */
-.LeftSide{
-  float: left;
-  width: 44%;
-}
-#leftButton,#rightButton{
-  position: absolute;
-  height: auto;
-  width: 14%;
-  bottom: 17%;
-}
-#rightButton{
-  right: 10px;
-}
-.content li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.active{
-  display: block !important;
-  opacity: 1 !important;
-  }
   /* -------------------------------------------- Video / Right Side of the banner -----------------------------------*/
 
 .RightSide{
@@ -58,16 +48,130 @@ body{
   margin: -260px 5px 0 5px;
 }
 /* --------------------------------------------First Slide / Image Carousel-------------------------------------------------- */
+.LeftSide{
+  float: left;
+  width: 44%;
+}
+#leftButton,#rightButton{
+  position: absolute;
+  height: auto;
+  width: 13%;
+  bottom: 17%;
+}
+#rightButton{
+  right: 10px;
+}
+.content li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.active{
+  display: block !important;
+  opacity: 1 !important;
+}
+
 #firstSlide, #secondSlide{
   display: none;
   position: absolute;
   top: 0;
   right: 0;
-  /* transition: all 0.5s; */
+  transition: all 0.5s;
   height: 100%;
   width: 100%;
   opacity: 0;
 }
+#secondSlide{
+  background-color: #2d4373;
+}
+#firstSlide{
+  background-color: white;
+}
+#firstSlide #findMoreButton,#secondSlide #watchTheStory{
+  transition: all 0.5s;
+  position: absolute;
+  bottom: 45px;
+  width: 35%;
+}
+#firstSlide #slide1Img{
+  position: absolute;
+  transition: all 0.5s;
+
+}
+
+#secondSlide #slide2Logo{
+  transition: all .5s;
+  position: absolute;
+  top: 6%;
+}
+#secondSlide #slide2Img{
+  position: absolute;
+  transition: all .5s;
+  margin: -150px 0 0 0;
+}
+@media only screen and (min-width: 1350px) {                       /*When Screen is 1600x520 - 1350x520*/
+  #firstSlide #findMoreButton,#secondSlide #watchTheStory{
+    left: 80px;
+  }
+  #firstSlide #slide1Img{
+    top: 50%;
+    margin: -200px 0 0 0;
+    width: 61%;
+    left: 10%;
+  }
+  #secondSlide #slide2Logo{
+    left: 10%;
+    width: 45%;
+  }
+  #secondSlide #slide2Img{
+    top: 50%;
+    left: 10%;
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1349px) { /*When Screen is 1349x520 - 1000x520*/
+  #firstSlide #slide1Img{
+    top: 50%;
+    margin: -180px 0 0 0;
+    width: 83%;
+    left: 15%;
+ }
+  #firstSlide #findMoreButton,#secondSlide #watchTheStory{
+    left: 50%;
+    margin-left: -100px;
+  }
+  #secondSlide #slide2Logo{
+    left: 10%;
+    width: 50%;
+  }
+  #secondSlide #slide2Img{
+    top: 60%;
+    left: 10%;
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 1000px) { /*When Screen is 1349x520 - 1000x520*/
+  #firstSlide #slide1Img{
+    top: 50%;
+    margin: -180px 0 0 0;
+    width: 83%;
+    left: 15%;
+ }
+  #firstSlide #findMoreButton,#secondSlide #watchTheStory{
+    left: 50%;
+    margin-left: -100px;
+  }
+  #secondSlide #slide2Logo{
+    left: 10%;
+    width: 50%;
+  }
+  #secondSlide #slide2Img{
+    top: 60%;
+    left: 10%;
+    width: 85%;
+  }
+}
+/* --------------------------------------------------------------Animation Keyframes --------------------------------------- */
 .YesOpacity{
   animation: opacityInAnimation .5s;
   }
@@ -89,38 +193,4 @@ body{
   100%{
     opacity: 0;
   }
-}
-#firstSlide #findMoreButton,#secondSlide #watchTheStory{
-  position: absolute;
-  left: 80px;
-  bottom: 45px;
-  width: 200px;
-}
-#firstSlide{
-  background-color: white;
-}
-#firstSlide #slide1Img{
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  margin: -200px 0 0 0;
-  width: 60%;
-}
-/* --------------------------------------------Second Slide / Image Carousel-------------------------------------------------- */
-
-#secondSlide{
-  background-color: #2d4373;
-}
-#secondSlide #slide2Logo{
-  position: absolute;
-  top: 6%;
-  left: 10%;
-  width: 45%;
-}
-#secondSlide #slide2Img{
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  margin: -150px 0 0 0;
-  width: 85%;
 }
