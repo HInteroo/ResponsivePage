@@ -28,18 +28,22 @@ body{
 #leftButton,#rightButton{
   position: absolute;
   height: auto;
-  width: 16%;
-}
-#leftButton{
-  bottom: 14%;
+  width: 14%;
+  bottom: 17%;
 }
 #rightButton{
-  margin-right: 10px;
-  right: 0;
-  bottom: 14%;
+  right: 10px;
 }
-
-/* -------------------------------------------- Video / Right Side of the banner -----------------------------------*/
+.content li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.active{
+  display: block !important;
+  opacity: 1 !important;
+  }
+  /* -------------------------------------------- Video / Right Side of the banner -----------------------------------*/
 
 .RightSide{
   float: right;
@@ -53,18 +57,70 @@ body{
   right: 0;
   margin: -260px 5px 0 5px;
 }
-/* --------------------------------------------First Slide / Left Side-------------------------------------------------- */
-.firstSlide{
-  /* background: red; */
+/* --------------------------------------------First Slide / Image Carousel-------------------------------------------------- */
+#firstSlide, #secondSlide{
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* transition: all 0.5s; */
   height: 100%;
   width: 100%;
+  opacity: 0;
 }
-.LeftSide #slide1Img{
+.YesOpacity{
+  animation: opacityInAnimation .5s;
+  }
+.NoOpacity{
+  animation: opacityOutAnimation .5s;
+}
+@keyframes opacityInAnimation {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes opacityOutAnimation {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+#firstSlide #findMoreButton,#secondSlide #watchTheStory{
+  position: absolute;
+  left: 80px;
+  bottom: 45px;
+  width: 200px;
+}
+#firstSlide{
+  background-color: white;
+}
+#firstSlide #slide1Img{
   position: absolute;
   top: 50%;
-  left: 50%;
-  margin: -200px 0 0 -40%;
+  left: 10%;
+  margin: -200px 0 0 0;
   width: 60%;
-  height: auto;
 }
-/* } */
+/* --------------------------------------------Second Slide / Image Carousel-------------------------------------------------- */
+
+#secondSlide{
+  background-color: #2d4373;
+}
+#secondSlide #slide2Logo{
+  position: absolute;
+  top: 6%;
+  left: 10%;
+  width: 45%;
+}
+#secondSlide #slide2Img{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  margin: -150px 0 0 0;
+  width: 85%;
+}
