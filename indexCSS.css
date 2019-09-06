@@ -33,30 +33,41 @@ body{
   position: relative;
   height: 100%;
 }
-  /* -------------------------------------------- Video / Right Side of the banner -----------------------------------*/
-
-.RightSide{
-  float: right;
-  width: 56%;
-}
-.RightSide #BarclaysVid{
-  position: absolute;
-  width: 99%;
-  height: 100%;
-  top: 50%;
-  right: 0;
-  margin: -260px 5px 0 5px;
-}
-/* --------------------------------------------First Slide / Image Carousel-------------------------------------------------- */
-.LeftSide{
-  float: left;
-  width: 44%;
-}
 #leftButton,#rightButton{
   position: absolute;
   height: auto;
-  width: 13%;
-  bottom: 17%;
+}
+  /* -------------------------------------------- Video / Right Side of the banner -----------------------------------*/
+  @media only screen and (min-width: 341px) { /*When Screen is 1349x520 - 1000x520*/
+
+  .RightSide{
+    float: right;
+    width: 56%;
+  }
+  .LeftSide{
+    float: left;
+    width: 44%;
+  }
+  .RightSide #BarclaysVid{
+    position: absolute;
+    width: 99%;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    margin: -260px 1px 0 1px;
+  }
+  #leftButton,#rightButton{
+    width: 13%;
+    bottom: 17%;
+  }
+}
+/* --------------------------------------------First Slide / Image Carousel-------------------------------------------------- */
+@media only screen and (max-width: 340px) { /*When Screen is 1349x520 - 1000x520*/
+  #leftButton,#rightButton{
+    width: 8%;
+    bottom: 35%;
+    margin: 0 15px 0 15px;
+  }
 }
 #rightButton{
   right: 10px;
@@ -90,13 +101,10 @@ body{
 #firstSlide #findMoreButton,#secondSlide #watchTheStory{
   transition: all 0.5s;
   position: absolute;
-  bottom: 45px;
-  width: 35%;
 }
 #firstSlide #slide1Img{
   position: absolute;
   transition: all 0.5s;
-
 }
 
 #secondSlide #slide2Logo{
@@ -104,14 +112,17 @@ body{
   position: absolute;
   top: 6%;
 }
+
 #secondSlide #slide2Img{
   position: absolute;
   transition: all .5s;
   margin: -150px 0 0 0;
 }
-@media only screen and (min-width: 1350px) {                       /*When Screen is 1600x520 - 1350x520*/
+@media only screen and (min-width: 1200px) {                       /*When Screen is 1600x520 - 1350x520*/
   #firstSlide #findMoreButton,#secondSlide #watchTheStory{
     left: 80px;
+    bottom: 45px;
+    width: 35%;
   }
   #firstSlide #slide1Img{
     top: 50%;
@@ -129,16 +140,18 @@ body{
     width: 85%;
   }
 }
-@media only screen and (min-width: 1000px) and (max-width: 1349px) { /*When Screen is 1349x520 - 1000x520*/
+@media only screen and (min-width: 341px) and (max-width: 1199px) { /*When Screen is 1349x520 - 1000x520*/
   #firstSlide #slide1Img{
     top: 50%;
-    margin: -180px 0 0 0;
-    width: 83%;
+    margin: -110px 0 0 0;
+    width: 75%;
     left: 15%;
  }
   #firstSlide #findMoreButton,#secondSlide #watchTheStory{
-    left: 50%;
-    margin-left: -100px;
+    left: 30%;
+    bottom: 70px;
+    width: 35%;
+
   }
   #secondSlide #slide2Logo{
     left: 10%;
@@ -150,18 +163,38 @@ body{
     width: 85%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 1000px) { /*When Screen is 1349x520 - 1000x520*/
+@media only screen and (max-width: 340px) { /*When Screen is 1349x520 - 1000x520*/
+  .RightSide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+  }
+  .LeftSide{
+    position: absolute;
+    top: 45%;
+    height: 55%;
+    width: 100%;
+  }
+  .RightSide #BarclaysVid{
+    width: 100%;
+    height: 100%;
+  }
+
   #firstSlide #slide1Img{
-    top: 50%;
-    margin: -180px 0 0 0;
-    width: 83%;
-    left: 15%;
+    top: 5%;
+    /* margin: -180px 0 0 0; */
+    width: 80%;
+    /* height: 90%; */
+    left: 4%;
  }
   #firstSlide #findMoreButton,#secondSlide #watchTheStory{
-    left: 50%;
-    margin-left: -100px;
+    right: 10%;
+    bottom: 15px;
+    width: 30%;
   }
-  #secondSlide #slide2Logo{
+  /* #secondSlide #slide2Logo{
     left: 10%;
     width: 50%;
   }
@@ -169,7 +202,7 @@ body{
     top: 60%;
     left: 10%;
     width: 85%;
-  }
+  } */
 }
 /* --------------------------------------------------------------Animation Keyframes --------------------------------------- */
 .YesOpacity{
