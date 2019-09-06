@@ -35,3 +35,4 @@ function addRemoveClasses (idActive){
     $(idActive).removeClass("NoOpacity");
   }, 500);
 }
+console.log(window.performance);
