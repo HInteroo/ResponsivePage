@@ -1,38 +1,48 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <title>Quartz Code Test</title>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+function start() {                            //An infinite loop that loops through slides evey 10 seconds
+  window.setInterval(function () {
+    nextSlide();
+  }, 10000);
+}
+start();
 
-    <link rel="stylesheet" href="indexCSS.css">
-    <script src="Javascript/jquery.min.js"></script>
-    <script async type="text/javascript" src="Javascript/JSFunction.js"></script>
+$(window).on('load', function () {
+  $('#rightButton').click(function(){             //Clicking on the -> arrow
+    nextSlide();
+  });
+  $('#leftButton').click(function(){                //Clicking on the <- arrow
+    var activeSlide = "#"+ $(".active").attr('id');
+    if($(activeSlide).prev().addClass("active YesOpacity").length) {
+      addRemoveClasses (activeSlide);
+      }
+    else{
+      locationOfIndex(activeSlide,"Last");
+    }
+  });
+});
 
-  </head>
-  <body>
-    <div class="bannerContent">
+function locationOfIndex(idActive, index){
+  $(idActive).removeClass("active YesOpacity");
+  $(idActive).removeClass("NoOpacity");
+  $("li:"+index).addClass("active YesOpacity");
+  setTimeout(function(){
+    $("li:"+index).removeClass("NoOpacity")
+  }, 500);
+}
 
-      <div class="LeftSide">
-        <ul class="content">
-            <li id="firstSlide"class="active">
-                <img id="slide1Img" src="SE_Test_Assets/slide2_copylarge.png" >
-                <a href="https://creative.qz.com/"><img id="findMoreButton" src="SE_Test_Assets/slide2_button.png" ></a>
-            </li>
-            <li id="secondSlide"class="">
-                <img id="slide2Logo" src="SE_Test_Assets/slide1_logo.png" >
-                <img id="slide2Img" src="SE_Test_Assets/slide1_copylarge.png" >
-                <a href="https://qz.com"><img id="watchTheStory" src="SE_Test_Assets/slide1_button.png"></a>
-            </li>
-          </ul>
-          <img id="leftButton" src="SE_Test_Assets/left_arrow.png" >
-          <img id="rightButton" src="SE_Test_Assets/right_arrow.png" >
-      </div>
+function nextSlide(){                       //A function that goes to the next slide of the image carousel
+  var activeSlide = "#"+ $(".active").attr('id');
+  if($(activeSlide).next().addClass("active YesOpacity").length) {
+    addRemoveClasses (activeSlide);
+  }
+  else{
+    locationOfIndex(activeSlide,"First");
+  }
+}
 
-      <div class="RightSide">
-          <video id="BarclaysVid" autoplay loop muted playsinline >
-            <source src="SE_Test_Assets/Barclays EdTech.mp4" type="video/mp4" />
-          </video>
-      </div>
-    </div>
-  </body>
-</html>
+function addRemoveClasses (idActive){          //Makes a slide active and the other slide(s) inactive
+  $(idActive).removeClass("active YesOpacity");
+  $(idActive).addClass("NoOpacity");
+  setTimeout(function(){
+    $(idActive).removeClass("NoOpacity");
+  }, 500);
+}
