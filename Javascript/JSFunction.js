@@ -20,7 +20,7 @@ $(window).on('load', function () {
   });
 });
 
-function locationOfIndex(idActive, index){
+function locationOfIndex(idActive, index){        //changes the slides if there's no prev() or next() li element. idActive = id of slide with .actve, index = first or last
   $(idActive).removeClass("active YesOpacity");
   $(idActive).removeClass("NoOpacity");
   $("li:"+index).addClass("active YesOpacity");
