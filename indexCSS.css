@@ -3,8 +3,7 @@ body{
   height: 100%;
   width: 100%;
 }
-/* @media only screen and (max-width: 1600px){ */
-/* -------------------------------------------- Banner Content's CSS / Create Sides ---------------------------------- */
+/* -------------------------------------------- Banner Content's CSS / Creating sides ---------------------------------- */
 .bannerContent{
   position: absolute;
   left: 0;
@@ -12,7 +11,7 @@ body{
   background-color: white;
   transition: all 0.5s;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {  /*When browser's min-width: 768x520 '*/
 
   .bannerContent{
     height: 520px;
@@ -21,24 +20,30 @@ body{
     max-height: 520px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) { /*When browser's max-width is 767px: Change Height to 430px ( 767x420px from here on out.) '*/
   .bannerContent{
-    height: 520px;
+    height: 430px;
     width: 100%;
     max-width: 1600px;
     max-height: 430px;
   }
 }
-.LeftSide,.RightSide{
+
+.LeftSide,.RightSide{                     /* Name of sides */
   position: relative;
   height: 100%;
 }
-#leftButton,#rightButton{
+#leftButton,#rightButton{                 /* Name of Carousel's arrows */
   position: absolute;
   height: auto;
+  transition: all .5s;
+  cursor: pointer;
 }
-  /* -------------------------------------------- Video / Right Side of the banner -----------------------------------*/
-  @media only screen and (min-width: 426px) { /*When Screen is 1349x520 - 1000x520*/
+#leftButton:hover,#rightButton:hover{
+  opacity: .6;
+}
+/* -------------------------------------------- Video / Right Side of the banner -----------------------------------*/
+  @media only screen and (min-width: 426px) {/*When Screen's width is: 1600 - 426px, relocate the sides. Up: Video, down: Caoursel */
 
   .RightSide{
     float: right;
@@ -62,7 +67,7 @@ body{
   }
 }
 /* --------------------------------------------First Slide / Image Carousel-------------------------------------------------- */
-@media only screen and (max-width: 425px) { /*When Screen is 1349x520 - 1000x520*/
+@media only screen and (max-width: 425px) { /*When Screen's max-width is: 425px, relocate && resize Carousel arrows*/
   #leftButton,#rightButton{
     width: 8%;
     bottom: 35%;
@@ -77,12 +82,12 @@ body{
   padding: 0;
   list-style: none;
 }
-.active{
+.active{                                  /* Carousel's way of saying currently active, show image by opacity and displaying the image */
   display: block !important;
   opacity: 1 !important;
 }
 
-#firstSlide, #secondSlide{
+#firstSlide, #secondSlide{                /* Making the images/slides not display */
   display: none;
   position: absolute;
   top: 0;
@@ -98,7 +103,7 @@ body{
 #firstSlide{
   background-color: white;
 }
-#firstSlide #findMoreButton,#secondSlide #watchTheStory{
+#firstSlide #findMoreButton,#secondSlide #watchTheStory{    /* Common style for arrows*/
   transition: all 0.5s;
   position: absolute;
 }
@@ -117,7 +122,10 @@ body{
   position: absolute;
   transition: all .5s;
 }
-@media only screen and (min-width: 1200px) {                       /*When Screen is 1600x520 - 1350x520*/
+
+/* -------------------------------Responsive web designing, screen capturing and moving objects around w.r.t screen's width ---------------*/
+
+@media only screen and (min-width: 1200px) {                       /*When Screen is 1600x520 - 1200x520*/
   #firstSlide #findMoreButton,#secondSlide #watchTheStory{
     left: 80px;
     bottom: 45px;
@@ -140,7 +148,7 @@ body{
     width: 85%;
   }
 }
-@media only screen and (min-width: 426px) and (max-width: 1199px) { /*When Screen is 1349x520 - 1000x520*/
+@media only screen and (min-width: 426px) and (max-width: 1199px) { /*When Screen is 1199x520 (height changed when width = 767 ) - 426x420*/
   #firstSlide #slide1Img{
     top: 25%;
     margin: 0 0 0 0;
@@ -163,7 +171,7 @@ body{
     width: 85%;
   }
 }
-@media only screen and (max-width: 425px) { /*When Screen is 1349x520 - 1000x520*/
+@media only screen and (max-width: 425px) {            /*When Screen's max-width is: 425x420*/
   .RightSide{
     position: absolute;
     top: 0;
@@ -203,7 +211,7 @@ body{
     width: 75%;
   }
 }
-/* --------------------------------------------------------------Animation Keyframes --------------------------------------- */
+/* --------------------------------------------------------------Animation Keyframes for carousel --------------------------------------- */
 .YesOpacity{
   animation: opacityInAnimation 1s;
   }
