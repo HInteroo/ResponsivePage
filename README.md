@@ -1,3 +1,4 @@
-# Quartz
-Quartz's Coding Challenge/Test/Project
-https://hinteroo.github.io/Quartz/
+# Image Carousel - a "Responsive Page".
+A page that's responsive. 
+
+https://hinteroo.github.io/ResponsivePage/
